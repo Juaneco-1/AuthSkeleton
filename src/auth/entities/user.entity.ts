@@ -1,4 +1,4 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity('users')
@@ -11,7 +11,7 @@ export class User {
     {
         unique:true
     })
-    email:string;
+    username:string;
 
     @Column('text',{
         select:false
@@ -38,9 +38,10 @@ export class User {
     )
     product:Product; */
  
+    
     @BeforeInsert()
     checkFieldsBeforeInsert(){
-        this.email=this.email.toLowerCase();
+        this.username=this.username.toLowerCase();
     }
 
     @BeforeUpdate()

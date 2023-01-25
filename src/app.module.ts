@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
+import { DependenciesModule } from './dependencies/dependencies.module';
+
 
 
 
@@ -18,6 +20,10 @@ import { AuthModule } from './auth/auth.module';
       autoLoadEntities: true,
       synchronize:true,
     }),
+  
+    DependenciesModule,
+  
+    
   
   
   ],
